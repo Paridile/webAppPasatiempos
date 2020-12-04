@@ -12,6 +12,10 @@
         <servlet-name>ServletPasatiempo</servlet-name>
         <servlet-class>servlets.ServletPasatiempo</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ServletTipoMascota</servlet-name>
+        <servlet-class>servlets.ServletTipoMascota</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ServletPersona</servlet-name>
         <url-pattern>/ServletPersona</url-pattern>
@@ -24,6 +28,10 @@
         <servlet-name>ServletPasatiempo</servlet-name>
         <url-pattern>/ServletPasatiempo</url-pattern>
     </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ServletTipoMascota</servlet-name>
+        <url-pattern>/ServletTipoMascota</url-pattern>
+    </servlet-mapping>    
     <session-config>
         <session-timeout>
             30

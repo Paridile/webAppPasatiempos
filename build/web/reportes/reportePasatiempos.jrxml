@@ -24,14 +24,14 @@
 		<groupHeader>
 			<band height="40">
 				<textField>
-					<reportElement style="SubTitle" x="47" y="13" width="506" height="24" forecolor="#006600" uuid="4ac88381-4a17-4ca9-a031-69ebfe14cafc"/>
+					<reportElement style="SubTitle" x="26" y="13" width="506" height="24" forecolor="#006600" uuid="4ac88381-4a17-4ca9-a031-69ebfe14cafc"/>
 					<textElement>
 						<font isBold="true"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{idPasatiempo}]]></textFieldExpression>
 				</textField>
 				<rectangle>
-					<reportElement mode="Opaque" x="0" y="13" width="36" height="24" forecolor="#CCCCCC" backcolor="#CCCCCC" uuid="b8685954-9a03-42c8-beb8-69f941afb034"/>
+					<reportElement mode="Opaque" x="0" y="13" width="18" height="24" forecolor="#CCCCCC" backcolor="#6DDA6C" uuid="b8685954-9a03-42c8-beb8-69f941afb034"/>
 				</rectangle>
 			</band>
 		</groupHeader>
