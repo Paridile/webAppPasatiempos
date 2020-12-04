@@ -9,8 +9,8 @@
         <servlet-class>servlets.ServletMascota</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>ServletProfesor</servlet-name>
-        <servlet-class>servlets.ServletProfesor</servlet-class>
+        <servlet-name>ServletPasatiempo</servlet-name>
+        <servlet-class>servlets.ServletPasatiempo</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>ServletPersona</servlet-name>
@@ -21,8 +21,8 @@
         <url-pattern>/ServletMascota</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>ServletProfesor</servlet-name>
-        <url-pattern>/ServletProfesor</url-pattern>
+        <servlet-name>ServletPasatiempo</servlet-name>
+        <url-pattern>/ServletPasatiempo</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

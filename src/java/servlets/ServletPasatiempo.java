@@ -6,7 +6,7 @@
 package servlets;
 
 
-import accesos.AccesoProfesor;
+import accesos.AccesoPasatiempo;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletConfig;
@@ -19,39 +19,22 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Alex RomHer
  */
-public class ServletProfesor extends HttpServlet {
+public class ServletPasatiempo extends HttpServlet {
 
-   private AccesoProfesor bd;
+ private AccesoPasatiempo bd;
 
     @Override
     public void init(ServletConfig cfg) throws ServletException {
-        bd = new AccesoProfesor();
+        bd = new AccesoPasatiempo();
         bd.abrirConexion();
     }
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-       String idProfesor = (String)request.getParameter("idProfesor");
-        String apellidoPaterno = (String)request.getParameter("apellidoPaterno");
-        String apellidoMaterno = (String)request.getParameter("apellidoMaterno");
-        String nombres = (String)request.getParameter("nombres");
-        String fechaNacimiento=(String)request.getParameter("fechaNacimiento");
-        String sexo = (String)request.getParameter("sexo");
-        String calle=(String)request.getParameter("calle");
-        String numeroExterior=(String)request.getParameter("numeroExterior");
-        String coloniaLocalidad=(String)request.getParameter("coloniaLocalidad");
-        String municipioAlcaldia=(String)request.getParameter("municipioAlcaldia");
-        String entidadFederativa=(String)request.getParameter("entidadFederativa");
-        String codigoPostal=(String)request.getParameter("codigoPostal");
-      
-        String telefonoFijo=(String)request.getParameter("telefonoFijo");
-        String telefonoMovil=(String)request.getParameter("telefonoMovil");
-        String correoElectronico=(String)request.getParameter("correoElectronico");
-        String categoria=(String)request.getParameter("categoria");
-        String salario=(String)request.getParameter("salario");
-        
-        
-        bd.insertarProfesor(idProfesor,nombres, apellidoPaterno, apellidoMaterno, fechaNacimiento, sexo,calle,numeroExterior,coloniaLocalidad,municipioAlcaldia,entidadFederativa,codigoPostal,telefonoFijo,telefonoMovil,correoElectronico,categoria,salario);
+        String idPasatiempo = (String)request.getParameter("idPasatiempo");
+        String nombre = (String)request.getParameter("nombre");
+        String descripcion = (String)request.getParameter("descripcion");
+        bd.insertarPasatiempo(idPasatiempo,nombre, descripcion);
         devolverPaginaHTML(response);        
     }
     
@@ -62,11 +45,11 @@ public class ServletProfesor extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Respuesta de inserción del Profesor</title>");            
+            out.println("<title>Respuesta de inserción del pasatiempo</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Los datos del profesor han sido registrados correctamente</h1>");
-            out.println("<a href=\"reporteProfesores.jsp\" >Ver reporte de los Profesores</a><p>");
+            out.println("<h1>Los datos del pasatiempo han sido registrados correctamente</h1>");
+            out.println("<a href=\"reportePasatiempos.jsp\" >Ver reporte de los pasatiempos</a><p>");
             out.println("<a href =\"index.html\">Ir al inicio</a>");
             out.println("</body>");
             out.println("</html>");
@@ -91,7 +74,7 @@ public class ServletProfesor extends HttpServlet {
 
     @Override
     public String getServletInfo() {
-        return "Servlet para la inserción de datos básicos de la carrera";
+        return "Servlet para la inserción de datos básicos de los pasatiempos";
     }
     
     @Override

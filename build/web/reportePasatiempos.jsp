@@ -16,19 +16,19 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Reporte Profesores</title>
+        <title>Reporte pasatiempos</title>
     </head>
     <body>
-        <h2>Reporte de datos de alumnos del CU UAEM VM!</h2>
+        <h2>Reporte de datos de los pasatiempos</h2>
         <%
             Connection conn = null;
             try {
                 Class.forName("com.mysql.cj.jdbc.Driver");
-                conn = DriverManager.getConnection("jdbc:mysql://localhost:3307/cu_uaem_vm2?serverTimezone=UTC", "root", "root");
+                conn = DriverManager.getConnection("jdbc:mysql://localhost:3307/pasatiempos?serverTimezone=UTC", "root", "root");
             } catch (Exception ex) {
                 ex.printStackTrace();
             }
-            File reportFile = new File(application.getRealPath("reportes/reporteProfesores.jasper"));
+            File reportFile = new File(application.getRealPath("reportes/reportePasatiempos.jasper"));
             Map parameters = new HashMap();
             byte[] bytes = JasperRunManager.runReportToPdf(reportFile.getPath(), parameters, conn);
  
