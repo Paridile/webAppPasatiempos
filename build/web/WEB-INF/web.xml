@@ -5,8 +5,8 @@
         <servlet-class>servlets.ServletPersona</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>ServletCarrera</servlet-name>
-        <servlet-class>servlets.ServletCarrera</servlet-class>
+        <servlet-name>ServletMascota</servlet-name>
+        <servlet-class>servlets.ServletMascota</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>ServletProfesor</servlet-name>
@@ -17,8 +17,8 @@
         <url-pattern>/ServletPersona</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>ServletCarrera</servlet-name>
-        <url-pattern>/ServletCarrera</url-pattern>
+        <servlet-name>ServletMascota</servlet-name>
+        <url-pattern>/ServletMascota</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>ServletProfesor</servlet-name>

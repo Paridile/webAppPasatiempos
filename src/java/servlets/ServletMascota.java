@@ -6,7 +6,7 @@
 package servlets;
 
 
-import accesos.AccesoCarrera;
+import accesos.AccesoMascota;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletConfig;
@@ -19,27 +19,24 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Alex RomHer
  */
-public class ServletCarrera extends HttpServlet {
+public class ServletMascota extends HttpServlet {
 
- private AccesoCarrera bd;
+ private AccesoMascota bd;
 
     @Override
     public void init(ServletConfig cfg) throws ServletException {
-        bd = new AccesoCarrera();
+        bd = new AccesoMascota();
         bd.abrirConexion();
     }
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String idCarrera = (String)request.getParameter("idCarrera");
-        String siglas = (String)request.getParameter("siglas");
-        String creditos = (String)request.getParameter("creditos");
+        String idMascota = (String)request.getParameter("idMascota");
         String nombre = (String)request.getParameter("nombre");
-        String duracionMinima=(String)request.getParameter("duracionMinima");
-        String duracionMaxima = (String)request.getParameter("duracionMaxima");
-        String fechaDeCreacion=(String)request.getParameter("fechaDeCreacion");
+        String descripcion = (String)request.getParameter("descripcion");
+        String idTipoMascota = (String)request.getParameter("idTipoMascota");
 
-        bd.insertarCarrera(idCarrera,nombre, siglas, creditos, duracionMinima, duracionMaxima,fechaDeCreacion);
+        bd.insertarMascota(idMascota,nombre, descripcion, idTipoMascota);
         devolverPaginaHTML(response);        
     }
     
@@ -50,11 +47,11 @@ public class ServletCarrera extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Respuesta de inserción de la carrera</title>");            
+            out.println("<title>Respuesta de inserción de la mascota</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Los datos de la carrera han sido registrados correctamente</h1>");
-            out.println("<a href=\"reporteCarreras.jsp\" >Ver reporte de las carreras</a><p>");
+            out.println("<h1>Los datos de la mascota han sido registrados correctamente</h1>");
+            out.println("<a href=\"reporteMascotas.jsp\" >Ver reporte de las mascotas</a><p>");
             out.println("<a href =\"index.html\">Ir al inicio</a>");
             out.println("</body>");
             out.println("</html>");
@@ -79,7 +76,7 @@ public class ServletCarrera extends HttpServlet {
 
     @Override
     public String getServletInfo() {
-        return "Servlet para la inserción de datos básicos de la carrera";
+        return "Servlet para la inserción de datos básicos de la mascota";
     }
     
     @Override
