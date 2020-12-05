@@ -20,6 +20,10 @@
         <servlet-name>ServletPersonaMascota</servlet-name>
         <servlet-class>servlets.ServletPersonaMascota</servlet-class>
     </servlet>        
+    <servlet>
+        <servlet-name>ServletPersonaPasatiempo</servlet-name>
+        <servlet-class>servlets.ServletPersonaPasatiempo</servlet-class>
+    </servlet>     
     <servlet-mapping>
         <servlet-name>ServletPersona</servlet-name>
         <url-pattern>/ServletPersona</url-pattern>
@@ -39,7 +43,11 @@
     <servlet-mapping>
         <servlet-name>ServletPersonaMascota</servlet-name>
         <url-pattern>/ServletPersonaMascota</url-pattern>
-    </servlet-mapping>      
+    </servlet-mapping> 
+    <servlet-mapping>
+        <servlet-name>ServletPersonaPasatiempo</servlet-name>
+        <url-pattern>/ServletPersonaPasatiempo</url-pattern>
+    </servlet-mapping>          
     <session-config>
         <session-timeout>
             30
