@@ -1,6 +1,12 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package servlets;
 
-import accesos.AccesoPersona;
+
+import accesos.AccesoTipoMascota;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletConfig;
@@ -9,24 +15,26 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class ServletPersona extends HttpServlet {
-    private AccesoPersona bd;
+/**
+ *
+ * @author Alex RomHer
+ */
+public class ServletTipoMascota extends HttpServlet {
+
+ private AccesoTipoMascota bd;
 
     @Override
     public void init(ServletConfig cfg) throws ServletException {
-        bd = new AccesoPersona();
+        bd = new AccesoTipoMascota();
         bd.abrirConexion();
     }
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String idPersona = (String)request.getParameter("idPersona");
-        String apellidoPaterno = (String)request.getParameter("apellidoPaterno");
-        String apellidoMaterno = (String)request.getParameter("apellidoMaterno");
-        String nombre = (String)request.getParameter("nombres");
-        String fechaNacimiento=(String)request.getParameter("fechaNacimiento");
-        String sexo = (String)request.getParameter("sexo");
-        bd.insertarPersona(idPersona,nombre, apellidoPaterno, apellidoMaterno, fechaNacimiento, sexo);
+        String idTipoMascota = (String)request.getParameter("idTipoMascota");        
+        String descripcion = (String)request.getParameter("descripcion");        
+
+        bd.insertarTipoMascota(idTipoMascota,descripcion);
         devolverPaginaHTML(response);        
     }
     
@@ -34,8 +42,7 @@ public class ServletPersona extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
-
-        out.println("<!doctype html>");
+out.println("<!doctype html>");
         out.println("<html lang=\"es\">");
         out.println(" <head>");
         out.println("   <!-- Required meta tags -->");
@@ -43,18 +50,18 @@ public class ServletPersona extends HttpServlet {
         out.println("   <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\">");
         out.println("    <!-- Bootstrap CSS -->");
         out.println("   <link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css\" integrity=\"sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2\" crossorigin=\"anonymous\">");
-        out.println("    <title>Respuesta de inserción de la persona</title>");
+        out.println("    <title>Respuesta de inserción del tipo de mascota</title>");
         out.println(" </head>");
         out.println(" <body style=\"background-color: #eeeeee;\">");
         out.println("     <section>");
-        out.println("         <h2 class=\"display-4 container mb-3 pt-5 text-success text-center\">Los datos de la persona han sido registrados correctamente</h2>");
+        out.println("         <h2 class=\"display-4 container mb-3 pt-5 text-success text-center\">Los datos del tipo de mascota han sido registrados correctamente</h2>");
         out.println("         <div class=\"text-center\">");
         out.println("           <img src=\"https://images.vexels.com/media/users/3/157931/isolated/preview/604a0cadf94914c7ee6c6e552e9b4487-curved-check-mark-circle-icon-by-vexels.png\" class=\"resp\" alt=\"Incersión exitosa\">");
         out.println("         </div>          ");
         out.println("         <div class=\"row justify-content-center pt-3 pb-5\">");
         out.println("           <div class=\"col-4\">");
-        out.println("               <a href=\"reportePersonas.jsp\" >");
-        out.println("                   <button type=\"button\" class=\"btn btn-info btn-lg btn-block\">Ver reporte de personas</button>");
+        out.println("               <a href=\"reporteTipoMascota.jsp\" >");
+        out.println("                   <button type=\"button\" class=\"btn btn-info btn-lg btn-block\">Ver reporte de tipos de mascotas</button>");
         out.println("               </a>                                    ");
         out.println("           </div>");
         out.println("           <div class=\"col-4\">");
@@ -76,7 +83,6 @@ public class ServletPersona extends HttpServlet {
         out.println("   </style>");
         out.println(" </body>");
         out.println("</html>");
-
             out.flush();
             out.close();
         } catch (IOException e) {
@@ -98,7 +104,7 @@ public class ServletPersona extends HttpServlet {
 
     @Override
     public String getServletInfo() {
-        return "Servlet para la inserción de datos básicos de una persona";
+        return "Servlet para la inserción de datos básicos de la mascota";
     }
     
     @Override

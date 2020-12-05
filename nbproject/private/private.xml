@@ -3,11 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/pablo/Documents/9no/poo/WebAppPasatiempos/web/reportePersonas.jsp</file>
+            <file>file:/C:/Users/pablo/Documents/9no/poo/WebAppPasatiempos/web/reportes/reportePersonas.jrxml</file>
             <file>file:/C:/Users/pablo/Documents/9no/poo/WebAppPasatiempos/web/index.html</file>
-            <file>file:/C:/Users/pablo/Documents/9no/poo/WebAppPasatiempos/src/java/servlets/ServletPersona.java</file>
+            <file>file:/C:/Users/pablo/Documents/9no/poo/WebAppPasatiempos/src/java/accesos/AccesoMascota.java</file>
+            <file>file:/C:/Users/pablo/Documents/9no/poo/WebAppPasatiempos/src/java/servlets/ServletMascota.java</file>
             <file>file:/C:/Users/pablo/Documents/9no/poo/WebAppPasatiempos/web/FormularioPersona.html</file>
             <file>file:/C:/Users/pablo/Documents/9no/poo/WebAppPasatiempos/web/WEB-INF/web.xml</file>
+            <file>file:/C:/Users/pablo/Documents/9no/poo/WebAppPasatiempos/web/FormularioMascotas.html</file>
             <file>file:/C:/Users/pablo/Documents/9no/poo/WebAppPasatiempos/src/java/accesos/AccesoPersona.java</file>
         </group>
     </open-files>

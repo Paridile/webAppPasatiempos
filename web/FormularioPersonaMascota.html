@@ -1,0 +1,61 @@
+
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
+    <title>Persona - mascota</title>
+  </head>
+  <body style="background-color: #eeeeee" >
+      <section>
+
+    <h2 class="display-4 mb-5 pt-5 text-center container">Ingrese los datos de la relación persona - mascota a insertar</h2>
+          <div class="container">
+            <div class="row">
+              <div class="col">
+              </div>
+              <div class="col-10">
+                  <div class="card mb-5">
+                    <div class="card-body">
+                <form action = "ServletPersonaMascota" method = "post">
+                <div class="form-group">
+                    <label for="personaMascota1">IdPersona</label>
+                    <input type="text" name="IdPersona" class="form-control" id="personaMascota1" aria-describedby="IdPersona">
+                </div>
+
+                <div class="form-group">
+                    <label for="personaMascota2">idMascota</label>
+                    <input type="text" name="idMascota" class="form-control" id="personaMascota2" aria-describedby="idMascota"></input>
+                </div>
+
+                <div class="form-group">
+                    <label for="personaMascota3">Fecha de adquisición</label>
+                    <input type="text" name="fechaAdquisicion" class="form-control" id="personaMascota3" aria-describedby="fechaAdquisicion"></input>
+                    <small id="emailHelp" class="form-text text-muted">AAAA-MM-DD</small>
+                </div>                    
+                    
+                <div class="text-center">
+                    <input class="btn btn-success mt-1 mb-2" type = "submit" name = "botonInsertar" value = "Insertar persona-mascota">
+                    <input class="btn btn-danger mt-1 mb-2" type = "reset" name = "botonLimpiar" value = "Limpiar formulario">
+                </div>                    
+                </form>
+                    </div>
+                </div>
+
+              </div>
+              <div class="col">
+              </div>
+            </div>
+  </div>
+</section>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+  </body>
+</html>

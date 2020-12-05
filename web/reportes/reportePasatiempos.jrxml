@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="b4417fb1-46c8-4478-899d-d366922f5354">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" fontName="Arial" fontSize="26" isBold="true" pdfFontName="Helvetica-Bold"/>
+	<style name="SubTitle" forecolor="#666666" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT * FROM pasatiempos.pasatiempo]]>
+	</queryString>
+	<field name="idPasatiempo" class="java.lang.Long">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nombre" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="descripcion" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<group name="idPasatiempo">
+		<groupExpression><![CDATA[$F{idPasatiempo}]]></groupExpression>
+		<groupHeader>
+			<band height="40">
+				<textField>
+					<reportElement style="SubTitle" x="26" y="13" width="506" height="24" forecolor="#006600" uuid="4ac88381-4a17-4ca9-a031-69ebfe14cafc"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{idPasatiempo}]]></textFieldExpression>
+				</textField>
+				<rectangle>
+					<reportElement mode="Opaque" x="0" y="13" width="18" height="24" forecolor="#CCCCCC" backcolor="#6DDA6C" uuid="b8685954-9a03-42c8-beb8-69f941afb034"/>
+				</rectangle>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band height="6"/>
+		</groupFooter>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="70" splitType="Stretch">
+			<image>
+				<reportElement x="275" y="0" width="300" height="64" uuid="03630f09-0804-4f2e-a213-23e5dd5396a2"/>
+				<imageExpression><![CDATA["leaf_banner_green.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement style="Title" x="0" y="13" width="263" height="33" uuid="25a0bd47-6d92-44e7-941c-6e526a50a5da"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Pasatiempos]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="SubTitle" x="92" y="46" width="182" height="22" uuid="e7587c5d-a1f1-4053-a019-82136b27e179"/>
+				<text><![CDATA[Consulta pasatiempos]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="36" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="35" width="555" height="1" uuid="1d2760d0-d2a9-4d5d-b90b-5368df5efcd8"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement style="Column header" x="0" y="19" width="277" height="15" uuid="2302e419-9a9a-40e8-9eb4-ebefb7e3c2c8"/>
+				<text><![CDATA[nombre]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="277" y="19" width="277" height="15" uuid="d1eec35e-a8fb-4783-ab7f-4bd882a94550"/>
+				<text><![CDATA[descripcion]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="16" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="15" width="555" height="1" uuid="3bda087a-ff0c-4ff5-ba51-d8dc4e92feca"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement style="Detail" x="0" y="0" width="277" height="15" uuid="78dc9840-b0d1-4225-8cdf-629ecc8347f0"/>
+				<textFieldExpression><![CDATA[$F{nombre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="277" y="0" width="277" height="15" uuid="fa3355a2-4314-4bf6-9638-ee91b2b43e0d"/>
+				<textFieldExpression><![CDATA[$F{descripcion}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1" uuid="f06eee64-26f7-44d6-941b-5e5cb5315372"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement style="Column header" x="433" y="0" width="80" height="20" uuid="b5ff302f-a7ca-4728-bf05-06651e03380e"/>
+				<textElement textAlignment="Right">
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement style="Column header" x="513" y="0" width="40" height="20" uuid="32464c9a-14e0-416e-9860-b843e30f2fa1"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement style="Column header" x="0" y="0" width="197" height="20" uuid="4c51efc1-8f02-460f-9f67-b61ce7e158cd"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
